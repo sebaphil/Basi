@@ -6,7 +6,7 @@
 <html>
 <head>
     <title><?php echo $titolo_pagina ?></title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/login.css">
 
 </head>
