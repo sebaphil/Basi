@@ -23,11 +23,15 @@
 	         
 	    </div><!--#header-->
 	 
-	        <div id="main"></div><!--#main-->
-	 
-	        <div id="sidebar"></div><!--#sidebar-->
+	        <div id="main">
+	        	<!--#percorso-->
+	        	<div id="path"></div>
+	        	
+	        </div><!--#main-->
 	     
-	    <div id="footer"></div><!--#footer-->
+	    <div id="footer">
+	    	
+	    </div><!--#footer-->
 	 
 	</div><!--#container-->
 </body>
