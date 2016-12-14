@@ -30,7 +30,7 @@ CREATE TABLE Lezioni(
     IdLezioni SERIAL NOT NULL,
     Data DATE NOT NULL,
     Corso SERIAL NOT NULL,
-    Docente SERIAL NOT NULL,
+    Docente CHAR[14] NOT NULL,
     PRIMARY KEY (IdLezioni)
 );
 
@@ -55,5 +55,5 @@ ALTER TABLE Appunti
 ALTER TABLE Lezioni
     ADD FOREIGN KEY (Corso) REFERENCES Corsi
         ON DELETE CASCADE,
-    ADD FOREIGN KEY (Username) REFERENCES Utenti
+    ADD FOREIGN KEY (Docente) REFERENCES Utenti
         ON DELETE CASCADE;
