@@ -22,6 +22,7 @@ CREATE TABLE Corsi(
     NomeDocente TEXT NOT NULL,
     CognomeDocente TEXT NOT NULL,
     AnnoAccademico TEXT NOT NULL,
+    CorsoLaurea TEXT NOT NULL,
     PRIMARY KEY (Codice)
 );
 
