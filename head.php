@@ -9,7 +9,7 @@
 <div id="container">
 
     <div id="header">
-        Appunti universitari
+        <h1>Appunti universitari</h1>
         <div id="navigation">
             <a href="">Login</a>
             <a href="">Sign Up</a>
