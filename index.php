@@ -1,5 +1,6 @@
 <?php
 $titolo_pagina = "Titolo pagina";
+$titolo_body = "Titolo nel body";
 require_once "head.php";
 ?>
 

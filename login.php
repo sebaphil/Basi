@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Login</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/login.css">
-</head>
-<body>
-    <div id="container">
+<?php
+$titolo_pagina = "Login";
+$titolo_body = "";
+require_once 'head.php';
+?>
         <fieldset id="loginForm">
             <form action="auth.php" method="post">
                 <h2 id="title" class="text-center">Login</h2>
@@ -36,7 +32,6 @@
                 ?>
             </form>
         </fieldset>
-    </div>
-	
-</body>
-</html>
+<?php
+require_once 'foot.php';
+?>
