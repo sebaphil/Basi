@@ -4,9 +4,11 @@ require_once "head.php";
 
 ?>
 
-	        <div id="main"></div><!--#main-->
-
-	        <div id="sidebar"></div><!--#sidebar-->
+    <div id="main">
+        <!--#percorso-->
+        <div id="path"></div>
+        
+        <div id="sidebar"></div><!--#sidebar-->
 
 <?php
 require_once "foot.php";
