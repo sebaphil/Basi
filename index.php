@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Appunti universitari</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<?php
+$titolo_pagina = "Titolo pagina";
+require_once "head.php";
 
 </head>
 <body>
 	<div id="container">
 	 
 	    <div id="header">
-	    	<h1>Appunti universitari</h1> 
+	    	<h1>Appunti universitari</h1>
 	        <div id="navigation">
 	        	<a href="">Login</a>
 	        	<a href="">Sign Up</a>
@@ -20,9 +18,9 @@
 					<div class="tfclear"></div>
 				</div>
 	        </div><!--#navigation-->
-	         
+
 	    </div><!--#header-->
-	 
+
 	        <div id="main">
 	        	<!--#percorso-->
 	        	<div id="path">Qui va inserito il percorso</div>
