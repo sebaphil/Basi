@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS Appunti CASCADE;
 /*CREAZIONE DELLE TABELLE*/
 
 CREATE TABLE Utenti(
-    Username CHAR[14] NOT NULL,
+    Username TEXT NOT NULL,
     Password TEXT NOT NULL,
     Nome TEXT NOT NULL,
     Cognome TEXT NOT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE Lezioni(
 
 CREATE TABLE Appunti(
     IdAppunti SERIAL NOT NULL,
-    Username CHAR[14] NOT NULL,
+    Username TEXT NOT NULL,
     Lezioni SERIAL NOT NULL,
     Nome TEXT NOT NULL,
     UltimaModifica DATE NOT NULL,
