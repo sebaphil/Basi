@@ -4,16 +4,16 @@
     //Eseguire query
 
     $result = pg_query($query) or die('Query failed: ' . pg_last_error());
-    echo "<table>\n";
-    while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
-        echo "\t<tr>\n";
-        foreach ($line as $col_value) {
-            echo "\t\t<td>$col_value</td>\n";
-        }
-        echo "\t</tr>\n";
+    $user = pg_fetch_array($result, null, PGSQL_ASSOC);
+    if($_POST["password"] === $user["password"]){
+        session_start();
+        $_SESSION["username"] = $_POST["username"];
+        $_SESSION["logTime"] = time();
+        header("location index.php");
     }
-    echo "</table>\n";
-
+    else{
+        header("location login.php?e=1&user=".$_POST["username"]);
+    }
 
 
 ?>
