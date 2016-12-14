@@ -16,15 +16,13 @@
                 <input type="password" name="password" placeholder="Password" class="center-block text-center">
                 <br>
 
-                <button type="button" id="loginButton" class="center-block btn btn-primary">
+                <button type="submit" id="loginButton" class="center-block btn btn-primary">
                         Login&nbsp;&nbsp;<span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
                 </button>
                 <br>                
-                <a href="signin.php">
-                    <button type="button" id="signinButton" class="center-block btn btn-success">
-                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>&nbsp;&nbsp;Sign in
-                    </button>
-                </a>
+                <div class="center-block" id="alreadyLogged">
+                    Nuovo utente? <a href="signin.php">Crea un account</a>                    
+                </div>
             </form>
         </fieldset>
     </div>

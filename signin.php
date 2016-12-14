@@ -8,33 +8,32 @@
 <body>
     <div id="container">
         <fieldset id="loginForm">
-            <form action=".php" method="post">
-                <h2 id="title" class="text-center">Sign In</h2>
+            <form action="newAccount.php" method="post">
+                <h2 id="title" class="text-center">Crea un nuovo account</h2>
                 <br>
-                <input type="text" name="username" placeholder="Username"  class="center-block text-center">
+                <input type="text" name="username" placeholder="Username"  class="center-block text-center" required>
                 <br>
-                <input type="password" name="password" placeholder="Password" class="center-block text-center">
+                <input type="password" name="password" placeholder="Password" class="center-block text-center" required>
                 <br>
-                <input type="password" name="verifyPassword" placeholder="Conferma Password" class="center-block text-center">
+                <input type="password" name="verifyPassword" placeholder="Conferma Password" class="center-block text-center" required>
                 <br>
-                <input type="text" name="nome" placeholder="Nome" class="center-block text-center">
+                <input type="text" name="nome" placeholder="Nome" class="center-block text-center" required>
                 <br>
-                <input type="text" name="cognome" placeholder="Cognome" class="center-block text-center">
+                <input type="text" name="cognome" placeholder="Cognome" class="center-block text-center" required>
                 <br>
-                <input type="date" name="annoNascita" class="center-block text-center">
+                <input type="date" name="annoNascita" class="center-block text-center" required>
                 <br>
-                <input type="email" name="email" placeholder="E-Mail" class="center-block text-center">
+                <input type="email" name="email" placeholder="E-Mail" class="center-block text-center" required>
                 <br>
 
                 <div class="center-block" id="alreadyLogged">
-                    Already signed? <a href="login.php">Login</a>                    
+                    Sei gi&agrave; registrato? <a href="login.php">Loggati</a>                    
                 </div>
                 <br>           
-                <a href="signin.php">
-                    <button type="button" id="signinButton" class="center-block btn btn-success">
-                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>&nbsp;&nbsp;Sign in
-                    </button>
-                </a>
+                <button type="submit" id="signinButton" class="center-block btn btn-success">
+                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>&nbsp;&nbsp;Registrati
+                </button>
+                
             </form>
         </fieldset>
     </div>
