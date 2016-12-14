@@ -9,7 +9,7 @@
 	<div id="container">
 	 
 	    <div id="header">
-	    	Appunti universitari 
+	    	<h1>Appunti universitari</h1> 
 	        <div id="navigation">
 	        	<a href="">Login</a>
 	        	<a href="">Sign Up</a>
@@ -25,8 +25,8 @@
 	 
 	        <div id="main">
 	        	<!--#percorso-->
-	        	<div id="path"></div>
-	        	
+	        	<div id="path">Qui va inserito il percorso</div>
+	        	<div id="mainbody">Questo è il body</div>
 	        </div><!--#main-->
 	     
 	    <div id="footer">
