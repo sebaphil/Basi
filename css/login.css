@@ -3,18 +3,21 @@
 }
 #loginForm{
 	width: 30%;
-	margin-top: 5%;
+	margin-top: 20px;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 20px;
 	border: 1px solid #aeaeae;
 }
-#title{
-	
+#alreadyLogged{
+	text-align: center;
 }
 #loginButton{
 	width: 30%;
 }
 #signinButton{
 	width: 30%;
+}
+a:-webkit-any-link {
+    text-decoration: none;
 }
