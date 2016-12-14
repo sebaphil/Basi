@@ -7,3 +7,17 @@ function checkLogin()
     else
         return false;
 }
+
+function logout()
+{
+    unset($_SESSION["logged"]);
+    session_destroy();
+    session_start();
+}
+
+function logged_needed()
+{
+    if ($_SESSION['logged'] == false) {
+        header('Location: ' . "http://$_SERVER[HTTP_HOST]" . '/index.php');
+    }
+}
