@@ -30,8 +30,7 @@ CREATE TABLE Lezioni(
     IdLezioni SERIAL NOT NULL,
     Data DATE NOT NULL,
     Corso SERIAL NOT NULL,
-    NomeDocente TEXT NOT NULL,
-    CognomeDocente TEXT NOT NULL,
+    Docente TEXT NOT NULL,
     PRIMARY KEY (IdLezioni)
 );
 
@@ -73,13 +72,13 @@ INSERT INTO Corsi VALUES
     ('003','Corso3','Nome3','Cognome3','2015/2016','informatica');
 
 INSERT INTO Lezioni VALUES
-    ('01','15/12/15','001','Nome1','Cognome1'),
-    ('02','16/12/15','001','Nome1','Cognome1'),
-    ('03','17/12/15','001','Nome1','Cognome1'),
-    ('04','15/12/15','002','Nome2','Cognome2'),
-    ('05','15/12/15','002','Nome2','Cognome2'),
-    ('06','15/12/15','002','Nome2','Cognome2'),
-    ('07','15/12/15','002','Nome2','Cognome2');
+    ('01','15/12/15','001','User1'),
+    ('02','16/12/15','001','User1'),
+    ('03','17/12/15','001','User1'),
+    ('04','15/12/15','002','User2'),
+    ('05','15/12/15','002','User2'),
+    ('06','15/12/15','002','User2'),
+    ('07','15/12/15','002','User2');
 
 INSERT INTO Appunti VALUES
     ('1','User1','01','titolo1','15/12/15','lorem ipsum'),
