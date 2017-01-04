@@ -3,6 +3,7 @@
 $titolo_pagina = "Gli appunti del Dovahkiin";
 $titolo_body = "Titolo del body";
 require_once "head.php";
+echo "<title>".$titolo_pagina."</title>"
 ?>
 <body>
 
