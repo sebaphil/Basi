@@ -9,10 +9,7 @@ echo "<title>".$titolo_pagina."</title>"
 
     <?php
 
-        $result = pg_query($dbconn, "SELECT table_name
-                                       FROM information_schema.tables
-                                      WHERE table_schema='public'
-                                        AND table_type='BASE TABLE'");
+        $result = pg_query($dbconn, "SELECT * FROM corsi;");
         if (!$result) {
             echo "An error occurred.\n";
             exit;
@@ -20,7 +17,10 @@ echo "<title>".$titolo_pagina."</title>"
 
         $arr = pg_fetch_all($result);
 
-        print_r($arr);
+        while ($row = pg_fetch_row($result)) {
+          echo "<a href='/appunti.php?corso=".$row[0]."'>".$row[1]."</a>";
+          echo "<br />\n";
+        }
 
 
     ?>
