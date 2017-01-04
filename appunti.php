@@ -1,7 +1,7 @@
 <html>
 <?php
 $titolo_pagina = "Gli appunti del Dovahkiin";
-$titolo_body = "Lezioni";
+$titolo_body = "Appunti";
 require_once "head.php";
 echo "<title>".$titolo_pagina."</title>"
 ?>
@@ -9,10 +9,9 @@ echo "<title>".$titolo_pagina."</title>"
 <?php
         echo $titolo_body;
         if(isset($_GET['corso'])){ $column = $_GET['corso'];}
-
-        $sql = "SELECT * FROM lezioni";
+        $sql = "SELECT * FROM appunti";
         if(!empty($column)){
-            $sql." WHERE lezioni.Corso='".$column."';";
+            $sql." WHERE appunti.Lezioni='".$column."';";
         }
 
 
@@ -26,7 +25,7 @@ echo "<title>".$titolo_pagina."</title>"
         echo "<table align='center'>";
         while ($row = pg_fetch_row($result)) {
             echo "<tr>";
-            echo "<td><a href='/appunti.php?lezione=".$row[0]."'>".$row[1]." Docente: ".$row[3]."</a></td>";
+            echo "<td><a href='/visualizza.php?appunto=".$row[0]."'>".$row[3].", Autore: ".$row[1]."</a></td>";
         }
         echo "</table>";
 
