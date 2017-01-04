@@ -8,7 +8,10 @@ require_once "head.php";
 
     <?php
 
-        $result = pg_query($dbconn, "SELECT * FROM information_schema.TABLES where table_schema = 'information_schema';");
+        $result = pg_query($dbconn, "SELECT table_name
+                                       FROM information_schema.tables
+                                      WHERE table_schema='public'
+                                        AND table_type='BASE TABLE'");
         if (!$result) {
             echo "An error occurred.\n";
             exit;
