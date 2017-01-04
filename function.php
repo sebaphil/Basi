@@ -2,7 +2,7 @@
 //TODO Completare la funzione di login
 function checkLogin()
 {
-    if (true)
+    if ($_SESSION["logged"])
         return true;
     else
         return false;
