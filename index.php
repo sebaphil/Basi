@@ -16,10 +16,10 @@ echo "<title>".$titolo_pagina."</title>"
         }
 
         $arr = pg_fetch_all($result);
-        echo "<table align='center'>";
+        echo "<table class='table-striped table-hover table' align='center'>";
         while ($row = pg_fetch_row($result)) {
             echo "<tr>";
-            echo "<td><a href='/lezioni.php?corso=".$row[0]."'>".$row[1]."</a></td>";
+            echo "<td><h2><a href='/lezioni.php?corso=".$row[0]."'>".$row[1]."</a></h2></td>";
         }
         echo "</table>";
 
