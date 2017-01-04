@@ -16,7 +16,7 @@ require_once "function.php";
     <div id="header">
         <?php
         if ($titolo_body != "") {
-            echo '<h1>'.$titolo_body.'</h1>';
+            echo '<h1 align="center">'.$titolo_body.'</h1>';
         }
         ?>
         <div id="navigation">
