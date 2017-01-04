@@ -1,7 +1,7 @@
 <?php
 // Connecting, selecting database
-$dbname= "";
-$host="";
+$dbname= "postgres";
+$host="localhost";
 $port="";
 $user="";
 $password="";

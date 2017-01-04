@@ -1,3 +1,9 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/login.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
 <?php
 $titolo_pagina = "Login";
 $titolo_body = "";
@@ -12,7 +18,7 @@ require_once 'head.php';
                 if(isset($_GET['user']))
                     echo "value='".$_GET['user']."'"; 
                 ?>
-                >
+
                 <br>
                 <input type="password" name="password" placeholder="Password" class="center-block text-center">
                 <br>
@@ -35,3 +41,4 @@ require_once 'head.php';
 <?php
 require_once 'foot.php';
 ?>
+</html>
