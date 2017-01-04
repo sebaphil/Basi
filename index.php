@@ -1,19 +1,27 @@
 <html>
 <?php
 $titolo_pagina = "Gli appunti del Dovahkiin";
-$titolo_body = "Titolo nel body";
+$titolo_body = "Titolo del body";
 require_once "head.php";
 ?>
+<body>
 
-    <div id="main">
-        <!--#percorso-->
-        <div id="path">Qui va inserito il percorso</div>
-        <div id="mainbody">
-            <?php
+    <?php
 
-        </div>
-    </div><!--#main-->
+        $result = pg_query($dbconn, "SELECT * FROM information_schema.TABLES where table_schema = 'information_schema';");
+        if (!$result) {
+            echo "An error occurred.\n";
+            exit;
+        }
 
+        $arr = pg_fetch_all($result);
+
+        print_r($arr);
+
+
+    ?>
+
+</body>
 <?php
 require_once "foot.php";
 ?>

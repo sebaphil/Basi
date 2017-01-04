@@ -1,5 +1,6 @@
 <?php
-
+require_once "connessione.php";
+require_once "function.php";
 
 ?>
 <!DOCTYPE html>
@@ -16,7 +17,7 @@
     <div id="header">
         <?php
         if ($titolo_body != "") {
-            echo '<h1>$titolo_body</h1>';
+            echo '<h1>'.$titolo_body.'</h1>';
         }
         ?>
         <div id="navigation">

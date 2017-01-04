@@ -32,9 +32,9 @@ require_once 'head.php';
                 </div>
                 <br>
                 <?php 
-                if(isset($_GET["e"])){
-                    echo "<div class=\"alert alert-danger\" role=\"alert\">Username o password errati</div>";
-                }
+                    if(isset($_GET["e"])){
+                        echo "<div class=\"alert alert-danger\" role=\"alert\">Username o password errati</div>";
+                    }
                 ?>
             </form>
         </fieldset>
