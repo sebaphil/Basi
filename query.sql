@@ -99,3 +99,5 @@ $$;
 CREATE TRIGGER trigger_delete_old_rows
 AFTER INSERT ON Appunti
 EXECUTE PROCEDURE delete_old_rows();
+
+INSERT INTO utenti VALUES ('admin', 'apw', 'admin', 'admin', '17/12/1994', 'admin@admin.com', '1');
