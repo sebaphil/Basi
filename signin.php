@@ -15,8 +15,6 @@
                 <br>
                 <input type="password" name="password" placeholder="Password" class="center-block text-center" required>
                 <br>
-                <input type="password" name="verifyPassword" placeholder="Conferma Password" class="center-block text-center" required>
-                <br>
                 <input type="text" name="nome" placeholder="Nome" class="center-block text-center" required>
                 <br>
                 <input type="text" name="cognome" placeholder="Cognome" class="center-block text-center" required>
