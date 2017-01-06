@@ -2,10 +2,13 @@
 //TODO Completare la funzione di login
 function checkLogin()
 {
-    if ($_SESSION["logged"])
+    if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
+        echo "Welcome to the member's area, " . $_SESSION['username'] . "!"."<a href='logout.php'> Logout</a>";
         return true;
-    else
+    } else {
+        //echo "Please log in first to see this page.";
         return false;
+    }
 }
 
 function logout()

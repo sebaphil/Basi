@@ -1,7 +1,7 @@
 <?php
 require_once "connessione.php";
 require_once "function.php";
-
+session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,7 +22,7 @@ require_once "function.php";
         <div id="navigation">
             <?php
             if (checkLogin() == false) {
-                echo '<a href="login.php">Login</a><a href="signin.php">Sign Up</a>';
+                echo '<a href="login.php">Login</a> or <a href="signin.php">Sign Up</a>';
             }
             ?>
             <div id="tfheader">
