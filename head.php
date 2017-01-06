@@ -2,6 +2,7 @@
 require_once "connessione.php";
 require_once "function.php";
 session_start();
+checkAdmin();
 ?>
 <!DOCTYPE html>
 <html>

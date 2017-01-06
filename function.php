@@ -11,6 +11,22 @@ function checkLogin()
     }
 }
 
+function checkAdmin()
+{
+    if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
+        if($_SESSION["type"] == '0'){
+            //echo "You are logged in as a normal user.";
+            return false;
+        } else {
+            //echo "You are logged in as an admin.";
+            return true;
+        }
+    } else {
+        //echo "You are logged in as a guest.";
+        return false;
+    }
+}
+
 function logout()
 {
     unset($_SESSION["logged"]);

@@ -13,6 +13,7 @@
         //session_start();
         $_SESSION["username"] = $_POST["username"];
         $_SESSION["logTime"] = time();
+        $_SESSION["type"] = $user["tipo"];
         header("location index.php");
         echo "<h1>Autenticazione eseguita con successo! Verrai reindirizzato alla homepage in 5 secondi.</h1>";
         $_SESSION["logged"]=true;

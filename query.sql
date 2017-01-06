@@ -58,6 +58,8 @@ ALTER TABLE Lezioni
     ADD FOREIGN KEY (Docente) REFERENCES Utenti
         ON DELETE CASCADE;
 
+/*Tipo: 0 = utente, 1 = admin*/
+
 INSERT INTO Utenti (Username, Password, Nome, Cognome, AnnoNascita, Email, Tipo) VALUES
     ('User1', 'pw1', 'Nome1', 'Cognome1', '01/01/01', 'email1@mail.com', '0'),
     ('User2', 'pw2', 'Nome2', 'Cognome2', '02/02/02', 'email2@mail.com', '0'),
