@@ -84,3 +84,16 @@ INSERT INTO Appunti VALUES
     ('1','User1','01','titolo1','15/12/15','lorem ipsum'),
     ('2','User1','01','titolo2','15/12/15','fuori frigo'),
     ('3','User2','01','titolo3','16/12/15','lupus lucio');
+
+CREATE FUNCTION delete_old_rows() RETURNS trigger
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    DELETE FROM Appunti WHERE UltimaModifica < NOW() - INTERVAL '2 years';
+    RETURN NULL;
+END;
+$$;
+
+CREATE TRIGGER trigger_delete_old_rows
+AFTER INSERT ON Appunti
+EXECUTE PROCEDURE delete_old_rows();
