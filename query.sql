@@ -68,10 +68,10 @@ INSERT INTO Utenti (Username, Password, Nome, Cognome, AnnoNascita, Email, Tipo)
     ('User5', 'pw5', 'Nome5', 'Cognome5', '05/05/05', 'email5@mail.com', '0'),
     ('User6', 'pw6', 'Nome6', 'Cognome6', '06/06/06', 'email6@mail.com', '0');
 
-INSERT INTO Corsi VALUES
-    ('001','Corso1','Nome1','Cognome1','2015/2016','informatica'),
-    ('002','Corso2','Nome2','Cognome2','2015/2016','psicologia'),
-    ('003','Corso3','Nome3','Cognome3','2015/2016','informatica');
+INSERT INTO Corsi(Nome, NomeDocente, CognomeDocente, AnnoAccademico, CorsoLaurea) VALUES
+    ('Corso1','Nome1','Cognome1','2015/2016','informatica'),
+    ('Corso2','Nome2','Cognome2','2015/2016','psicologia'),
+    ('Corso3','Nome3','Cognome3','2015/2016','informatica');
 
 INSERT INTO Lezioni VALUES
     ('01','15/12/15','001','User1'),

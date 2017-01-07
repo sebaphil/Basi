@@ -20,8 +20,16 @@ echo "<title>".$titolo_pagina."</title>";
         while ($row = pg_fetch_row($result)) {
             echo "<tr>";
             echo "<td><h2><a href='/lezioni.php?corso=".$row[0]."'>".$row[1]."</a></h2></td>";
+            if(checkAdmin()){
+                echo "<td><h2><a href='deletecorso.php?id=".$row[0]."'>Elimina</a></h2></td>";
+            }
         }
         echo "</table>";
+        echo "<br>";
+        if(checkAdmin()){
+            echo "<h3><a href='addcorso.php'>Aggiungi corso</a></h3>";
+        }
+
 
     ?>
 
