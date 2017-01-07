@@ -27,11 +27,7 @@ checkAdmin();
             }
             ?>
             <div id="tfheader">
-                <form id="tfnewsearch" method="get" action="http://www.google.com">
-                    <input type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit"
-                                                                                                     value="search"
-                                                                                                     class="tfbutton">
-                </form>
+                <h5 align="right"><a href="search.php">Effettua una ricerca</a></h5>
                 <div class="tfclear"></div>
             </div>
         </div><!--#navigation-->
