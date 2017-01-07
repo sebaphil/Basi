@@ -24,6 +24,8 @@ echo "<title>".$titolo_pagina."</title>";
         </h3>
         </form>
     </div>
-
+<?php
+require_once "foot.php";
+?>
 </body>
 </html>

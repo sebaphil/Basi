@@ -30,6 +30,8 @@ echo "<title>".$titolo_pagina."</title>"
     } else {
         echo "<h1>Sei loggato come guest. Esegui il login per effettuare una ricerca.</h1>";
     }
+    require_once "foot.php";
 ?>
+
 </body>
 </html>
