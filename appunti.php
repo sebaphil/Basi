@@ -26,8 +26,14 @@ echo "<title>".$titolo_pagina."</title>"
         while ($row = pg_fetch_row($result)) {
             echo "<tr>";
             echo "<td><h2><a href='/visualizza.php?appunto=".$row[0]."'>".$row[3].", Autore: ".$row[1]."</a></h2></td>";
+            if(isset($_SESSION['username']) && $_SESSION['username']==$row[1]){
+                echo "<td><h2><a href='deleteappunto.php?id=".$row[0]."'>Elimina</a></h2></td>";
+            }
         }
         echo "</table>";
+        if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
+            echo "<h3><a href='addcorso.php'>Aggiungi</a></h3>";
+        }
 
     ?>
 </body>
