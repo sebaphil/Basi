@@ -2,6 +2,8 @@ DROP TABLE IF EXISTS Utenti CASCADE;
 DROP TABLE IF EXISTS Corsi CASCADE;
 DROP TABLE IF EXISTS Lezioni CASCADE;
 DROP TABLE IF EXISTS Appunti CASCADE;
+DROP TRIGGER IF EXISTS trigger_delete_old_rows ON CASCADE;
+DROP FUNCTION IF EXISTS delete_old_rows() CASCADE;
 
 /*CREAZIONE DELLE TABELLE*/
 
@@ -73,19 +75,19 @@ INSERT INTO Corsi(Nome, NomeDocente, CognomeDocente, AnnoAccademico, CorsoLaurea
     ('Corso2','Nome2','Cognome2','2015/2016','psicologia'),
     ('Corso3','Nome3','Cognome3','2015/2016','informatica');
 
-INSERT INTO Lezioni VALUES
-    ('01','15/12/15','001','User1'),
-    ('02','16/12/15','001','User1'),
-    ('03','17/12/15','001','User1'),
-    ('04','15/12/15','002','User2'),
-    ('05','15/12/15','002','User2'),
-    ('06','15/12/15','002','User2'),
-    ('07','15/12/15','002','User2');
+INSERT INTO Lezioni(Data, Corso, Docente) VALUES
+    ('15/12/15','001','User1'),
+    ('16/12/15','001','User1'),
+    ('17/12/15','001','User1'),
+    ('15/12/15','002','User2'),
+    ('15/12/15','002','User2'),
+    ('15/12/15','002','User2'),
+    ('15/12/15','002','User2');
 
-INSERT INTO Appunti VALUES
-    ('1','User1','01','titolo1','15/12/15','lorem ipsum'),
-    ('2','User1','01','titolo2','15/12/15','fuori frigo'),
-    ('3','User2','01','titolo3','16/12/15','lupus lucio');
+INSERT INTO Appunti(Username, Lezioni, Titolo, UltimaModifica, Testo)VALUES
+    ('User1','01','titolo1','15/12/15','lorem ipsum'),
+    ('User1','01','titolo2','15/12/15','fuori frigo'),
+    ('User2','01','titolo3','16/12/15','lupus lucio');
 
 CREATE FUNCTION delete_old_rows() RETURNS trigger
 LANGUAGE plpgsql

@@ -32,7 +32,7 @@ echo "<title>".$titolo_pagina."</title>"
         }
         echo "</table>";
         if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
-            echo "<h3><a href='addcorso.php'>Aggiungi</a></h3>";
+            echo "<h3><a href='addappunto.php?lezione=".$column."'>Aggiungi</a></h3>";
         }
 
     ?>

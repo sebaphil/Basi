@@ -9,11 +9,7 @@ echo "<title>".$titolo_pagina."</title>"
 <?php
         echo $titolo_body;
         if(isset($_GET['appunto'])){ $column = $_GET['appunto'];}
-        $sql = "SELECT * FROM appunti";
-        if(!empty($column)){
-            $sql." WHERE appunti.IdAppunti='".$column."';";
-        }
-
+        $sql = "SELECT * FROM appunti WHERE appunti.IdAppunti='".$column."';";
 
         $result = pg_query($dbconn, $sql);
         if (!$result) {
