@@ -31,7 +31,7 @@ CREATE TABLE Corsi(
 CREATE TABLE Lezioni(
     IdLezioni SERIAL NOT NULL,
     Data DATE NOT NULL,
-    Corso SERIAL NOT NULL,
+    Corso INT NOT NULL,
     Docente TEXT NOT NULL,
     PRIMARY KEY (IdLezioni)
 );
