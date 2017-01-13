@@ -9,7 +9,7 @@ echo "<title>".$titolo_pagina."</title>"
 <?php
         echo $titolo_body;
         if(isset($_GET['lezione'])){ $column = $_GET['lezione'];}
-        $sql = "SELECT * FROM appunti WHERE appunti.Lezioni='".$column."';";
+        $sql = "SELECT * FROM appunti WHERE appunti.Lezioni='".$column."' ORDER BY ultimamodifica;";
 
         echo "<table class='table-striped table-hover table' align='center'>";
         $rows=$dbconn->prepare($sql);

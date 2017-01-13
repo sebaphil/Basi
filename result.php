@@ -13,7 +13,7 @@ echo "<title>".$titolo_pagina."</title>"
         $testo = pg_escape_string($_POST['ricerca']);
 
 
-        $query = "SELECT * FROM appunti WHERE strpos(LOWER(".$campo."), '".strtolower($testo)."')>0;";
+        $query = "SELECT * FROM appunti WHERE strpos(LOWER(".$campo."), '".strtolower($testo)."')>0 ORDER BY ultimamodifica;";
         $result = $dbconn->prepare($query);
         $result->execute();
         echo "<table class='table-striped table-hover table' align='center'>";
