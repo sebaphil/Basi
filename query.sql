@@ -39,7 +39,7 @@ CREATE TABLE Lezioni(
 CREATE TABLE Appunti(
     IdAppunti SERIAL NOT NULL,
     Username TEXT NOT NULL,
-    Lezioni SERIAL NOT NULL,
+    Lezioni INT NOT NULL,
     Titolo TEXT NOT NULL,
     UltimaModifica DATE NOT NULL,
     Testo TEXT NOT NULL,
