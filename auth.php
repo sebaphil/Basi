@@ -5,12 +5,12 @@
     $titolo_body = "Autenticazione";
     require_once "head.php";
     $query = "SELECT * FROM utenti WHERE username='".$_POST["username"]."';";
-    //Eseguire query
 
-    $result = pg_query($query) or die('Query failed: ' . pg_last_error());
-    $user = pg_fetch_array($result, null, PGSQL_ASSOC);
-    if($_POST["password"] === $user["password"]){
-        //session_start();
+    $result = $dbconn->prepare($query);
+    $result->execute();
+    $user = $result->fetch(PDO::FETCH_ASSOC);
+    if($_POST["password"] == $user["password"]){
+
         $_SESSION["username"] = $_POST["username"];
         $_SESSION["logTime"] = time();
         $_SESSION["type"] = $user["tipo"];

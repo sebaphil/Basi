@@ -18,14 +18,10 @@ echo "<title>".$titolo_pagina."</title>"
 
 
         $query = "INSERT INTO utenti VALUES('" . $utente . "', '" . $upassword . "', '" . $firstname ."', '" . $surname. "', '" . $birth . "', '" . $emailaddress . "', '0');";
-        $result = pg_query($query);
-        if (!$result) {
-            $errormessage = pg_last_error();
-            echo "Error with query: " . $errormessage;
-            exit();
-        }
-        echo "Login effettuato con successo, verrai reindirizzato alla homepage entro 5 secondi.";
-        //printf ("These values were inserted into the database - %s %s %s %s %s %s 0", $utente, $upassword, $firstname, $surname, $birth, $emailaddress);
+        $result = $dbconn->prepare($query);
+        $result->execute();
+
+        echo "Registrazione effettuata con successo, verrai reindirizzato alla homepage entro 5 secondi.";
         ?>
     </body>
 <?php

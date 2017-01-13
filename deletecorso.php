@@ -5,11 +5,10 @@ $titolo_pagina = "Gli appunti del Dovahkiin";
 $titolo_body = "Eliminazione corso";
 require_once "head.php";
 if(isset($_GET['id'])){ $column = $_GET['id'];}
-$result = pg_query($dbconn, "DELETE FROM corsi WHERE codice ='".$column."';");
-if (!$result) {
-    echo "An error occurred.\n";
-    exit;
-}
+$sql= "DELETE FROM corsi WHERE codice ='".$column."';";
+$result = $dbconn->prepare($sql);
+$result->execute();
+
 echo "<body><h1>Corso eliminato con successo!</h1></body>";
 ?>
 <html>

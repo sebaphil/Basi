@@ -11,25 +11,24 @@ echo "<title>".$titolo_pagina."</title>"
         if(isset($_GET['appunto'])){ $column = $_GET['appunto'];}
         $sql = "SELECT * FROM appunti WHERE appunti.IdAppunti='".$column."';";
 
-        $result = pg_query($dbconn, $sql);
-        if (!$result) {
-            echo "An error occurred.\n";
-            exit;
-        }
+        $result = $dbconn->prepare($sql);
+        $result->execute();
 
-        $row = pg_fetch_row($result);
-        $sql_autore = "SELECT Nome, Cognome FROM utenti WHERE Username='".$row[1]."';";
-        $res_autore = pg_query($dbconn, $sql_autore);
-        $row_autore = pg_fetch_row($res_autore);
+        $row = $result->fetch(PDO::FETCH_ASSOC);
+
+        $sql_autore = "SELECT Nome, Cognome FROM utenti WHERE Username='".$row['username']."';";
+        $res_autore = $dbconn->prepare($sql_autore);
+        $res_autore->execute();
+        $row_autore = $res_autore->fetch(PDO::FETCH_ASSOC);
 
 
         echo "<h2>";
             echo "<br>";
-            echo "Autore: ".$row_autore[0]." ".$row_autore[1];
+            echo "Autore: ".$row_autore['nome']." ".$row_autore['cognome'];
             echo "<br>";
-            echo "Data: ".$row[4];
+            echo "Data: ".$row['ultimamodifica'];
             echo "<br>";
-            echo "<textarea readonly>".$row[5]."</textarea>";
+            echo "<textarea readonly>".$row['testo']."</textarea>";
 
         echo "</h2>";
 

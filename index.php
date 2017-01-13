@@ -9,19 +9,16 @@ echo "<title>".$titolo_pagina."</title>";
 
     <?php
 
-        $result = pg_query($dbconn, "SELECT * FROM corsi;");
-        if (!$result) {
-            echo "An error occurred.\n";
-            exit;
-        }
 
-        $arr = pg_fetch_all($result);
         echo "<table class='table-striped table-hover table' align='center'>";
-        while ($row = pg_fetch_row($result)) {
+
+        $rows = $dbconn->prepare("SELECT * FROM corsi");
+        $rows->execute();
+        while($row = $rows->fetch(PDO::FETCH_ASSOC)){
             echo "<tr>";
-            echo "<td><h2><a href='/lezioni.php?corso=".$row[0]."'>".$row[1]."</a></h2></td>";
+            echo "<td><h2><a href='/lezioni.php?corso=".$row['codice']."'>".$row['nome']."</a></h2></td>";
             if(checkAdmin()){
-                echo "<td><h2><a href='deletecorso.php?id=".$row[0]."'>Elimina</a></h2></td>";
+                echo "<td><h2><a href='deletecorso.php?id=".$row['codice']."'>Elimina</a></h2></td>";
             }
         }
         echo "</table>";

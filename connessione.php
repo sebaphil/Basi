@@ -6,6 +6,7 @@ $port="5432";
 $user="postgres";
 $password="lelFAIGT420";
 
-$dbconn = pg_connect("dbname=".$dbname." host=".$host." port=".$port." user='".$user."' password='".$password."'")
-or die('Could not connect: ' . pg_last_error());
+$dbconn	= new PDO("pgsql:host=".$host.";port=".$port.";dbname=".$dbname, $user, $password);
+$dbconn -> setAttribute (PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 ?>

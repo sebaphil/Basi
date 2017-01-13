@@ -14,17 +14,12 @@ echo "<title>".$titolo_pagina."</title>"
 
 
         $query = "SELECT * FROM appunti WHERE strpos(LOWER(".$campo."), '".strtolower($testo)."')>0;";
-        $result = pg_query($query);
-        if (!$result) {
-            $errormessage = pg_last_error();
-            echo "Error with query: " . $errormessage;
-            exit();
-        }
-        $arr = pg_fetch_all($result);
+        $result = $dbconn->prepare($query);
+        $result->execute();
         echo "<table class='table-striped table-hover table' align='center'>";
-        while ($row = pg_fetch_row($result)) {
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
             echo "<tr>";
-            echo "<td><h2><a href='/visualizza.php?appunto=".$row[0]."'>".$row[3].", Autore: ".$row[1]."</a></h2></td>";
+            echo "<td><h2><a href='/visualizza.php?appunto=".$row['idappunti']."'>".$row['titolo'].", Autore: ".$row['username']."</a></h2></td>";
         }
         echo "</table>";
     } else {
