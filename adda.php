@@ -2,7 +2,7 @@
 <meta http-equiv="refresh" content="5;URL=index.php">
 <?php
 $titolo_pagina = "Gli appunti del Dovahkiin";
-$titolo_body = "Aggiunta del corso";
+$titolo_body = "Aggiunta dell'appunto";
 require_once "head.php";
 $username = pg_escape_string($_SESSION['username']);
 $lezioni = $_GET['lezione'];

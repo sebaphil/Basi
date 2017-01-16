@@ -16,8 +16,9 @@ echo "<title>".$titolo_pagina."</title>"
 
         $row = $result->fetch(PDO::FETCH_ASSOC);
 
-        $sql_autore = "SELECT Nome, Cognome FROM utenti WHERE Username='".$row['username']."';";
+        $sql_autore = "SELECT Nome, Cognome FROM utenti WHERE Username=:rowusername;";
         $res_autore = $dbconn->prepare($sql_autore);
+        $res_autore->bindParam(':rowusername', $row['username']);
         $res_autore->execute();
         $row_autore = $res_autore->fetch(PDO::FETCH_ASSOC);
 

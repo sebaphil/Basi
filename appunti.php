@@ -9,10 +9,11 @@ echo "<title>".$titolo_pagina."</title>"
 <?php
         echo $titolo_body;
         if(isset($_GET['lezione'])){ $column = $_GET['lezione'];}
-        $sql = "SELECT * FROM appunti WHERE appunti.Lezioni='".$column."' ORDER BY ultimamodifica;";
+        $sql = "SELECT * FROM appunti WHERE appunti.Lezioni=:column ORDER BY ultimamodifica;";
 
         echo "<table class='table-striped table-hover table' align='center'>";
         $rows=$dbconn->prepare($sql);
+        $rows->bindParam(':column', $column);
         $rows->execute();
         while($row=$rows->fetch(PDO::FETCH_ASSOC)){
             echo "<tr>";

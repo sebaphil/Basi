@@ -1,7 +1,7 @@
 <html>
 <?php
 $titolo_pagina = "Gli appunti del Dovahkiin";
-$titolo_body = "Aggiunta del corso";
+$titolo_body = "Aggiunta dell'appunto";
 require_once "head.php";
 if(!(isset($_SESSION['logged']) && $_SESSION['logged'] == true)){
     exit();
@@ -14,7 +14,7 @@ if(!(isset($_SESSION['logged']) && $_SESSION['logged'] == true)){
                 if(isset($_GET['lezione'])){ $column = $_GET['lezione'];}
                 echo "<form action='adda.php?lezione=".$column."' method='post'>";
             ?>
-                <h2 id="title" class="text-center">Aggiungi un corso</h2>
+                <h2 id="title" class="text-center">Aggiungi un appunto</h2>
                 <br>
                 <input type="text" name="titolo" placeholder="Titolo" class="center-block text-center" required>
                 <br>

@@ -15,6 +15,7 @@ echo "<title>".$titolo_pagina."</title>"
 
         $query = "SELECT * FROM appunti WHERE strpos(LOWER(".$campo."), '".strtolower($testo)."')>0 ORDER BY ultimamodifica;";
         $result = $dbconn->prepare($query);
+
         $result->execute();
         echo "<table class='table-striped table-hover table' align='center'>";
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {

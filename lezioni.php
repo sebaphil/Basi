@@ -10,11 +10,12 @@ echo "<title>".$titolo_pagina."</title>"
         echo $titolo_body;
         if(isset($_GET['corso'])){ $column = $_GET['corso'];}
 
-        $sql = "SELECT * FROM lezioni WHERE lezioni.Corso='".$column."';";
+        $sql = "SELECT * FROM lezioni WHERE lezioni.Corso=:column;";
 
 
         echo "<table class='table-striped table-hover table' align='center'>";
         $rows=$dbconn->prepare($sql);
+        $rows->bindParam('column',$column);
         $rows->execute();
         while($row=$rows->fetch(PDO::FETCH_ASSOC)){
             echo "<tr>";
